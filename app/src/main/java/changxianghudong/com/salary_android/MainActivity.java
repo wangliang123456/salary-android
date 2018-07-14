@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         MobileAds.initialize(this, "ca-app-pub-6212992129754905~9557332579");
         AdView adView = this.findViewById(R.id.adView);
-        adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-6212992129754905/8979991344");
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
