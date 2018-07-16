@@ -39,13 +39,49 @@ public class MainActivity extends AppCompatActivity {
         banner.setADListener(new AbstractBannerADListener() {
 
             @Override
-            public void onNoAD(AdError error) {
-                Log.i("AD_DEMO", "BannerNoAD，eCode=" + error.getErrorCode());
+            public void onNoAD(AdError adError) {
+                Log.d("dsadsadsa","onNoAD");
             }
 
             @Override
             public void onADReceiv() {
-                Log.i("AD_DEMO", "ONBannerReceive");
+                Log.d("dsadsadsa","onADReceiv");
+            }
+
+            @Override
+            public void onADExposure() {
+                super.onADExposure();
+                Log.d("dsadsadsa","onADExposure");
+            }
+
+            @Override
+            public void onADClosed() {
+                super.onADClosed();
+                Log.d("dsadsadsa","onADClosed");
+            }
+
+            @Override
+            public void onADClicked() {
+                super.onADClicked();
+                Log.d("dsadsadsa","onADClicked");
+            }
+
+            @Override
+            public void onADLeftApplication() {
+                super.onADLeftApplication();
+                Log.d("dsadsadsa","onADLeftApplication");
+            }
+
+            @Override
+            public void onADOpenOverlay() {
+                super.onADOpenOverlay();
+                Log.d("dsadsadsa","onADOpenOverlay");
+            }
+
+            @Override
+            public void onADCloseOverlay() {
+                super.onADCloseOverlay();
+                Log.d("dsadsadsa","onADCloseOverlay");
             }
         });
         banner.loadAD();
