@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.qq.e.ads.banner.ADSize;
 import com.qq.e.ads.banner.AbstractBannerADListener;
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         banner.loadAD();
+        ViewGroup viewGroup = this.findViewById(R.id.bannerContainer);
+        viewGroup.addView(banner);
     }
 
     @Override
