@@ -10,11 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
+import com.qq.e.ads.banner.ADSize;
+import com.qq.e.ads.banner.AbstractBannerADListener;
+import com.qq.e.ads.banner.BannerView;
+import com.qq.e.comm.util.AdError;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        String appId = "107046090";
+        String bannerPosID = "2030733674894376";
+        BannerView banner = new BannerView(this, ADSize.BANNER, appId, bannerPosID);
+        banner.setRefresh(30);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +35,19 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        banner.setADListener(new AbstractBannerADListener() {
+
+            @Override
+            public void onNoAD(AdError error) {
+                Log.i("AD_DEMO", "BannerNoAD，eCode=" + error.getErrorCode());
+            }
+
+            @Override
+            public void onADReceiv() {
+                Log.i("AD_DEMO", "ONBannerReceive");
+            }
+        });
+        banner.loadAD();
     }
 
     @Override
