@@ -19,6 +19,7 @@ public class InsuranceDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
     }
 
     @Override
