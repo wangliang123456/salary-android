@@ -16,6 +16,7 @@ public class CityDao {
 
     /**
      * 查询所有热门城市
+     *
      * @return
      */
     public List<City> getAllHotCity() {
