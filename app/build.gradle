@@ -27,7 +27,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:26.1.0'
+    compile group: 'com.google.guava', name: 'guava', version: '15.0'
     testCompile 'junit:junit:4.12'
-    implementation files('/Users/wangliang/Downloads/GDT_Android_SDK/GDTUnionSDK.4.18.570.min.jar')
 }
 
