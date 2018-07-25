@@ -13,7 +13,7 @@ import java.io.OutputStream;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    private static String DB_NAME = "info.db";
+    private static String DB_NAME = "salary-calc.db";
 
     private static String DB_PATH = "";
 
